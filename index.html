@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Skyways - Premium Travel Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Dexie.js from CDN -->
+    <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo"> Serendib Skyways <span class="dot"></span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Experience</a></li>
+            <li><a href="#booking">Book Now</a></li>
+            <li><a href="#my-bookings" class="btn-outline">My Trips</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Luxury Travel <br> Redefined.</h1>
+            <p>From airport pickups to panoramic tours. Experience the future of travel with SuraBus.</p>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn-primary">Book Your Journey</a>
+                <a href="#features" class="btn-secondary">Explore Features</a>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-header">
+            <h2>The Experience</h2>
+            <p>Designed for comfort, engineered for safety.</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="card-icon"><i class="fas fa-bed"></i></div>
+                <h3>Lower Deck Suites</h3>
+                <p>Private sleeping pods with premium bedding and bathroom facilities for overnight journeys.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="card-icon"><i class="fas fa-utensils"></i></div>
+                <h3>Upper Deck Dining</h3>
+                <p>Gourmet meals served with panoramic views. Enjoy entertainment systems at every seat.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="card-icon"><i class="fas fa-plane-arrival"></i></div>
+                <h3>Airport Direct</h3>
+                <p>Seamless connection for international travelers. We pick you up right from the terminal.</p>
+            </div>
+
+             <div class="feature-card">
+                <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Safety First</h3>
+                <p>24/7 staff support and scheduled maintenance to ensure a worry-free journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking-section">
+        <div class="booking-container">
+            <div class="booking-info">
+                <h2>Start Your Journey</h2>
+                <p>Select your package and let us handle the rest.</p>
+                <div class="info-item">
+                    <i class="fas fa-check-circle"></i> Instant Confirmation
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-check-circle"></i> Flexible Cancellation
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-check-circle"></i> Premium Support
+                </div>
+            </div>
+
+            <form id="bookingForm" class="booking-form">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required placeholder="John Doe">
+                </div>
+                
+                <div class="form-group">
+                    <label for="travelType">Travel Type</label>
+                    <select id="travelType" required>
+                        <option value="domestic">Domestic Tour</option>
+                        <option value="international">International / Airport Pickup</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="package">Select Package</label>
+                    <select id="package" required>
+                        <!-- Populated by JS -->
+                    </select>
+                </div>
+
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="seats">Passengers</label>
+                        <input type="number" id="seats" min="1" max="10" value="1" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Confirm Booking</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- My Bookings / Admin View -->
+    <section id="my-bookings" class="my-bookings">
+        <div class="section-header">
+            <h2>My Bookings</h2>
+            <p>Manage your upcoming trips.</p>
+        </div>
+        <div class="bookings-list" id="bookingsList">
+            <!-- Populated by JS via Dexie -->
+            <div class="empty-state">Loading booking history...</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">Serendib Skyways  </div>
+            <p>&copy; 2026 Serendib Skyways. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
